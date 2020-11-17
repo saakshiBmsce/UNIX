@@ -1,22 +1,20 @@
 echo "Enter the number:\c"
 read n
-if [ $n -eq 1 ]
-then echo "Fibonacci  1"
-elif [ $n -eq 2 ]
-then echo "Fibonacci  1"
-else
+if [ $n -eq 0 ];then
+echo "Fib: 1"
+elif [ $n -eq 1];then
+echo "Fib: 1"
+else 
+n=`expr $n - 2`
+i=0
 a=1
 b=1
-c=0
-n=`expr $n - 2`
-while [ $n -ne 0 ]
+while [ $i -le $n ]
 do
-c=`expr $a + $b `
-n=`expr $n - 1`
-a=`expr $b + 0 `
-b=
-`expr $c + 0 ` 
+	echo "$c"
+	c=`expr $a + $b`
+	a=`expr $b + 0`
+	b=`expr $c + 0`
+	i=`expr $i + 1`
 done
-echo "Fibonacci is $c"
 fi
-
